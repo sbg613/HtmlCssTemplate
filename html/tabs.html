@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/root.css"> 
+    <link rel="stylesheet" type="text/css" media="screen and (min-width:0px) and (max-width:480px)" href="../css/from0to480/tabs.css"> 
+    <link rel="stylesheet" type="text/css" media="screen and (min-width:480px) and (max-width:800px)" href="../css/from480to800/tabs.css"> 
+    <link rel="stylesheet" type="text/css" media="screen and (min-width:800px)" href="../css/from800/tabs.css"> 
+</head>
+<style>
+</style>
+<body>
+
+
+  <div id="London" class="tabcontent">
+    <h3>London</h3>
+    <p>London is the capital city of England.</p>
+  </div>
+
+  <div id="Paris" class="tabcontent">
+    <h3>Paris</h3>
+    <p>Paris is the capital of France.</p> 
+  </div>
+
+  <div id="Tokyo" class="tabcontent">
+    <h3>Tokyo</h3>
+    <p>Tokyo is the capital of Japan.</p>
+  </div>
+ 
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')" onmouseover="openCity(event, 'London')"  id="defaultOpen" >London</button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')"  onmouseover="openCity(event, 'Paris')">Paris</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')"  onmouseover="openCity(event, 'Tokyo')">Tokyo</button>
+  </div>
+
+</body>
+
+<script>
+  function openCity(evt, cityName) {
+    var tabcontent = document.getElementsByClassName("tabcontent");
+    for (var i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    var tablinks = document.getElementsByClassName("tablinks");
+    for (var i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  document.getElementById("defaultOpen").click();
+</script>
+</html> 
